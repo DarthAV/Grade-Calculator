@@ -16,19 +16,19 @@ var percentWithLowScore = 0.0;
 function calculate() {
     // take input from html form
     getInput();
-
+    caclulateOther()
     // finds lowest possible score you can get
     lowestPoints = minimizePossibleScore(possiblePointsAssignment);
 
     // finds percent on assignment low score
-    lowestPercent = lowestPoints / possiblePoints;
+    lowestPercent = lowestPoints / possiblePointsAssignment;
 
     // finds the highest class percentage you can possibly achieve
-    percentWithHighScore = calculatePercent(possiblePoints);
-    percentWithLowScore = CalculatePercent(lowestPoints);
+    percentWithHighScore = calculatePercent(possiblePointsAssignment);
+    percentWithLowScore = calculatePercent(lowestPoints);
 
     // round everything to two decimal places    
-
+    document.getElementById(output).innerHTML = "hello";
 
 }
 
@@ -51,20 +51,20 @@ function caclulateOther() {
 
 // calculate percent in the class based on points on the assignment
 function calculatePercent(points) {
-    return ((points + currentPointsCat) / (possiblePointsCat + possiblePoints) * weight) + otherGrades;
+    return ((points + currentPointsCategory) / (possiblePointsAssignment + possiblePointsCategory) * weight) + otherGrades;
 }
 
-// round to n decimal places
+// round to n decimal places using scientific notation
 function round(value, decimals) {
     return Number(Math.round(value + 'e' + decimals) + 'e-' + decimals);
 }
 
 //minimize possible score you can get
-function minimizePossibleScore(possiblePoints) {
-    var currentLowestPoints = possiblePoints;
+function minimizePossibleScore(possiblePointsAssignment) {
+    var currentLowestPoints = possiblePointsAssignment;
     var percentWithLowScore = 100.0;
 
-    for (var i = possiblePoints; i >= 0; i -= 0.1) {
+    for (var i = possiblePointsAssignment; i >= 0; i -= 0.1) {
 
         var newGrade = calculatePercent(i);
         if (newGrade < 90) {
@@ -75,4 +75,12 @@ function minimizePossibleScore(possiblePoints) {
 
     }
     return lowestPoints;
+}
+
+function reset() {
+    document.getElementById("currentGrade").value = "";
+    document.getElementById("possiblePointsAssignment").value = "";
+    document.getElementById("weight").value = "";
+    document.getElementById("possiblePointsCategory").value = "";
+    document.getElementById("currentPointsCategory").value = "";
 }

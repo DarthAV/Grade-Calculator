@@ -3,7 +3,6 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 <script src="./script.js"></script>
 
-
 <head>
     <meta charset="utf-8">
     <title>Grade Calculator</title>
@@ -22,16 +21,16 @@
         <input type="text" id="weight" name="weight" placeholder="Weight"><br>
         <label for="possiblePointsCategory">Enter the possible points for the category:</label><br>
         <input type="text" id="possiblePointsCategory" name="possiblePointsCategory" placeholder="Possible Points Category"><br>
-        <label for="currentPointsCategory">Enter the possible points for the category:</label><br>
+        <label for="currentPointsCategory">Enter the current points for the category:</label><br>
         <input type="text" id="currentPointsCategory" name="currentPointsCategory" placeholder="Current Points Category"><br>
         <br>
 
         <input type="button" value="Calculate" onclick="calculate()">
+        <button type="button" onclick="reset()">Reset</button>
 
-
-        <p id="output"></p>
 
     </form>
+    <p id="output"></p>
 
 </body>
 
