@@ -27,19 +27,28 @@ function calculate() {
     percentWithHighScore = calculatePercent(possiblePointsAssignment);
     percentWithLowScore = calculatePercent(lowestPoints);
 
-    // round everything to two decimal places    
-    document.getElementById(output).innerHTML = "hello";
+    // display results
+    document.getElementById("lowGrade").innerHTML = lowestPoints + "/" + possiblePointsAssignment;
+    document.getElementById("lowPercent").innerHTML = round(lowestPercent * 100, 2);
+    document.getElementById("gradeWithLowScore").innerHTML = round(percentWithLowScore * 100, 2);
+    document.getElementById("gradeWithHighScore").innerHTML = round(percentWithHighScore * 100, 2);
 
 }
 
 
 // take input from html form
 function getInput() {
-    currentGrade = document.getElementById("currentGrade").value;
-    possiblePointsAssignment = document.getElementById("possiblePointsAssignment").value;
-    weight = document.getElementById("weight").value;
-    possiblePointsCategory = document.getElementById("possiblePointsCategory").value;
-    currentPointsCategory = document.getElementById("currentPointsCategory").value;
+    // currentGrade = document.getElementById("currentGrade").value;
+    // possiblePointsAssignment = document.getElementById("possiblePointsAssignment").value;
+    // weight = document.getElementById("weight").value;
+    // possiblePointsCategory = document.getElementById("possiblePointsCategory").value;
+    // currentPointsCategory = document.getElementById("currentPointsCategory").value;
+    //set all values to 0
+    currentGrade = 96.4;
+    possiblePointsAssignment = 500;
+    weight = 40;
+    possiblePointsCategory = 590;
+    currentPointsCategory = 552;
 }
 
 // calculate other categories grade
