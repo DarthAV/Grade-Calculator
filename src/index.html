@@ -13,16 +13,17 @@
     <p></p>
 
     <form>
+
         <label for="currentGrade">Enter your grade:</label><br>
-        <input type="text" id="currentGrade" name="currentGrade" placeholder="Current Grade"><br>
+        <input type="number" id="currentGrade" name="currentGrade" placeholder="Current Grade" onkeypress="return event.charCode >= 48" min="1"><br>
         <label for="possiblePointsAssignment">Enter the possible points for the assignment:</label><br>
-        <input type="text" id="possiblePointsAssignment" name="possiblePointsAssignment" placeholder="Possible Points"><br>
+        <input type="number" id="possiblePointsAssignment" name="possiblePointsAssignment" placeholder="Possible Points" onkeypress="return event.charCode >= 48" min="1"><br>
         <label for="weight">Enter the weight of the category:</label><br>
-        <input type="text" id="weight" name="weight" placeholder="Weight"><br>
+        <input type="number" id="weight" name="weight" placeholder="Weight" onkeypress="return event.charCode >= 48" min="1"><br>
         <label for="possiblePointsCategory">Enter the possible points for the category:</label><br>
-        <input type="text" id="possiblePointsCategory" name="possiblePointsCategory" placeholder="Possible Points Category"><br>
+        <input type="number" id="possiblePointsCategory" name="possiblePointsCategory" placeholder="Possible Points Category" onkeypress="return event.charCode >= 48" min="0"><br>
         <label for="currentPointsCategory">Enter the current points for the category:</label><br>
-        <input type="text" id="currentPointsCategory" name="currentPointsCategory" placeholder="Current Points Category"><br>
+        <input type="number" id="currentPointsCategory" name="currentPointsCategory" placeholder="Current Points Category" onkeypress="return event.charCode >= 48" min="0"><br>
         <br>
 
         <input type="button" value="Calculate" onclick="calculate()">
@@ -30,7 +31,13 @@
 
 
     </form>
-    <p id="output"></p>
+
+    <p>Lowest drade with A <span id="lowGrade"></span></p>
+    <p>Percent of lowest grade <span id="lowPercent"></span></p>
+    <p>Your grade with lowest percent <span id="gradeWithLowScore"></span></p>
+    <p>Your grade with 100% <span id="gradeWithHighScore"></span></p>
+
+
 
 </body>
 
