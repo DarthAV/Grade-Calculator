@@ -87,10 +87,15 @@ function minimizePossibleScore(possiblePointsAssignment) {
     return lowestPoints;
 }
 
+// reset input fields to blank values
 function reset() {
     document.getElementById("currentGrade").value = "";
     document.getElementById("possiblePointsAssignment").value = "";
     document.getElementById("weight").value = "";
     document.getElementById("possiblePointsCategory").value = "";
     document.getElementById("currentPointsCategory").value = "";
+    document.getElementById("lowGrade").innerHTML = "___/___";
+    document.getElementById("lowPercent").innerHTML = "___";
+    document.getElementById("gradeWithLowScore").innerHTML = "___";
+    document.getElementById("gradeWithHighScore").innerHTML = "___";
 }
