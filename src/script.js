@@ -16,7 +16,7 @@ var percentWithLowScore = 0.0;
 function calculate() {
     // take input from html form
     getInput();
-    caclulateOther()
+    caclulateOther();
     // finds lowest possible score you can get
     lowestPoints = minimizePossibleScore(possiblePointsAssignment);
 
@@ -29,9 +29,9 @@ function calculate() {
 
     // display results
     document.getElementById("lowGrade").innerHTML = lowestPoints + "/" + possiblePointsAssignment;
-    document.getElementById("lowPercent").innerHTML = round(lowestPercent * 100, 2);
-    document.getElementById("gradeWithLowScore").innerHTML = round(percentWithLowScore * 100, 2);
-    document.getElementById("gradeWithHighScore").innerHTML = round(percentWithHighScore * 100, 2);
+    document.getElementById("lowPercent").innerHTML = round(lowestPercent, 2);
+    document.getElementById("gradeWithLowScore").innerHTML = round(percentWithLowScore, 2);
+    document.getElementById("gradeWithHighScore").innerHTML = round(percentWithHighScore, 2);
 
 }
 
@@ -43,7 +43,8 @@ function getInput() {
     // weight = document.getElementById("weight").value;
     // possiblePointsCategory = document.getElementById("possiblePointsCategory").value;
     // currentPointsCategory = document.getElementById("currentPointsCategory").value;
-    //set all values to 0
+
+    // value presets for testing
     currentGrade = 96.4;
     possiblePointsAssignment = 500;
     weight = 40;
@@ -51,7 +52,7 @@ function getInput() {
     currentPointsCategory = 552;
 }
 
-// calculate other categories grade
+// calculate other categories' grade
 function caclulateOther() {
     if (weight != 100) {
         otherGrades = currentGrade - (currentPointsCategory / possiblePointsCategory) * weight;
@@ -68,7 +69,7 @@ function round(value, decimals) {
     return Number(Math.round(value + 'e' + decimals) + 'e-' + decimals);
 }
 
-//minimize possible score you can get
+// minimize possible score you can get
 function minimizePossibleScore(possiblePointsAssignment) {
     var currentLowestPoints = possiblePointsAssignment;
     var percentWithLowScore = 100.0;
@@ -79,7 +80,7 @@ function minimizePossibleScore(possiblePointsAssignment) {
         if (newGrade < 90) {
             break;
         }
-        percentWithLowScore = calculatePercent(i);
+        percentWithLowScore = newGrade;
         currentLowestPoints = i;
 
     }
