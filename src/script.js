@@ -84,7 +84,7 @@ function minimizePossibleScore(possiblePointsAssignment) {
         currentLowestPoints = i;
 
     }
-    return lowestPoints;
+    return currentLowestPoints;
 }
 
 // reset input fields to blank values
